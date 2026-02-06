@@ -1,7 +1,7 @@
 ---
 version: 2
 multi-ecosystem-groups:
-  infrastructure:
+  infra:
     schedule:
       interval: "weekly"
 
@@ -9,7 +9,7 @@ updates:
 
   - package-ecosystem: "docker"
     directory: "/"
-    multi-ecosystem-group: "infrastructure"
+    multi-ecosystem-group: "infra"
     patterns:
       - "nginx"
       - "redis"
@@ -19,6 +19,6 @@ updates:
 
   - package-ecosystem: "helm"
     directory: "/"
-    multi-ecosystem-group: "infrastructure"
+    multi-ecosystem-group: "infra"
     patterns:
       - "*"

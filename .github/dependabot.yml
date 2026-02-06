@@ -1,7 +1,7 @@
 ---
 version: 2
 multi-ecosystem-groups:
-  ci-cd:
+  infrastructure:
     schedule:
       interval: "weekly"
 
@@ -70,7 +70,7 @@ updates:
 
   - package-ecosystem: "helm"
     directory: "/"
-    multi-ecosystem-group: "ci-cd"
+    multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
     groups:
@@ -83,7 +83,7 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
-    multi-ecosystem-group: "ci-cd"
+    multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
     groups:

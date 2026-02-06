@@ -1,7 +1,7 @@
 ---
 version: 2
 multi-ecosystem-groups:
-  infra:
+  infra2:
     schedule:
       interval: "weekly"
 

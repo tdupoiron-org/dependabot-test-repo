@@ -11,6 +11,7 @@ updates:
     target-branch: "dev"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
     groups:
       minor-and-patch:
         applies-to: security-updates
@@ -34,6 +35,7 @@ updates:
     target-branch: "stg"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 0
     groups:
       minor-and-patch:
         applies-to: security-updates
@@ -54,17 +56,11 @@ updates:
 
   - package-ecosystem: "docker"
     directory: "/"
-    schedule:
-      interval: "weekly"
-    groups:
-      infrastructure:
-        patterns:
-          - "nginx"
-          - "redis"
-          - "postgres"
-        update-types:
-          - "patch"
-          - "minor"
+    multi-ecosystem-group: "infrastructure"
+    patterns:
+      - "nginx"
+      - "redis"
+      - "postgres"
     ignore: 
       - dependency-name: "amdocs/platform/amaiz-framework-sdk"
 
@@ -73,20 +69,9 @@ updates:
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
-    groups:
-      helm-charts:
-        patterns:
-          - "*"
-        update-types:
-          - "patch"
-          - "minor"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     multi-ecosystem-group: "infrastructure"
     patterns:
       - "*"
-    groups:
-      actions:
-        patterns:
-          - "*"

@@ -1,20 +1,19 @@
 ---
 version: 2
 multi-ecosystem-groups:
-  infra:
+  infrastructure:
     schedule:
       interval: "weekly"
-
+      
 updates:
-
-  - package-ecosystem: "docker"
-    directory: "/"
-    multi-ecosystem-group: "infra2"
-    patterns: ["nginx", "redis", "postgres"]
-    ignore: 
-      - dependency-name: "amdocs/platform/amaiz-framework-sdk"
 
   - package-ecosystem: "helm"
     directory: "/"
-    multi-ecosystem-group: "infra2"
     patterns: ["*"]
+    multi-ecosystem-group: "infrastructure"
+  - package-ecosystem: "docker"
+    directory: "/"
+    patterns: ["nginx", "redis", "postgres"]
+    multi-ecosystem-group: "infrastructure"
+    ignore: 
+      - dependency-name: "amdocs/platform/amaiz-framework-sdk"

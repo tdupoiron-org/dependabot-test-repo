@@ -1,5 +1,10 @@
 ---
 version: 2
+multi-ecosystem-groups:
+  ci-cd:
+    schedule:
+      interval: "weekly"
+
 updates:
   - package-ecosystem: "pip"
     directory: "/"
@@ -14,6 +19,13 @@ updates:
         update-types:
           - "patch"
           - "minor"
+    # Disable ALL non-security version updates
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+          - version-update:semver-patch
     pull-request-branch-name:
       separator: "-"
       
@@ -30,6 +42,13 @@ updates:
         update-types:
           - "patch"
           - "minor"
+    # Disable ALL non-security version updates
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - version-update:semver-major
+          - version-update:semver-minor
+          - version-update:semver-patch
     pull-request-branch-name:
       separator: "-"
 
@@ -51,8 +70,7 @@ updates:
 
   - package-ecosystem: "helm"
     directory: "/"
-    schedule:
-      interval: "weekly"
+    multi-ecosystem-group: "ci-cd"
     groups:
       helm-charts:
         patterns:
@@ -63,8 +81,7 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
-    schedule:
-      interval: "weekly"
+    multi-ecosystem-group: "ci-cd"
     groups:
       actions:
         patterns:

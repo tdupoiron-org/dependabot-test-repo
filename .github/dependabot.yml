@@ -1,7 +1,7 @@
 ---
 version: 2
 multi-ecosystem-groups:
-  infra2:
+  infra3:
     schedule:
       interval: "weekly"
 
@@ -9,12 +9,12 @@ updates:
 
   - package-ecosystem: "docker"
     directory: "/"
-    multi-ecosystem-group: "infra2"
     patterns: ["nginx", "redis", "postgres"]
+    multi-ecosystem-group: "infra3"
     ignore: 
       - dependency-name: "amdocs/platform/amaiz-framework-sdk"
 
   - package-ecosystem: "helm"
     directory: "/"
-    multi-ecosystem-group: "infra2"
     patterns: ["*"]
+    multi-ecosystem-group: "infra3"

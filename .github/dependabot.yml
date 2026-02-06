@@ -14,13 +14,6 @@ updates:
         update-types:
           - "patch"
           - "minor"
-    # Disable ALL non-security version updates
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - version-update:semver-major
-          - version-update:semver-minor
-          - version-update:semver-patch
     pull-request-branch-name:
       separator: "-"
       
@@ -37,13 +30,6 @@ updates:
         update-types:
           - "patch"
           - "minor"
-    # Disable ALL non-security version updates
-    ignore:
-      - dependency-name: "*"
-        update-types:
-          - version-update:semver-major
-          - version-update:semver-minor
-          - version-update:semver-patch
     pull-request-branch-name:
       separator: "-"
 

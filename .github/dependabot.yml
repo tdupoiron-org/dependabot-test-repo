@@ -54,21 +54,18 @@ updates:
     pull-request-branch-name:
       separator: "-"
 
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    groups:
-      infrastructure:
-        patterns:
-          - "nginx"
-          - "redis"
-          - "postgres"
-        update-types:
-          - "patch"
-          - "minor"
-    ignore: 
-      - dependency-name: "amdocs/platform/amaiz-framework-sdk"
+        - package-ecosystem: "docker"
+          directory: "/"
+          multi-ecosystem-group: "infrastructure"
+          groups:
+            docker:
+              patterns:
+                - "nginx"
+                - "redis"
+                - "postgres"
+              update-types:
+                - "patch"
+                - "minor"
 
   - package-ecosystem: "helm"
     directory: "/"

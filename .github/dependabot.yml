@@ -54,18 +54,15 @@ updates:
     pull-request-branch-name:
       separator: "-"
 
-        - package-ecosystem: "docker"
-          directory: "/"
-          multi-ecosystem-group: "infrastructure"
-          groups:
-            docker:
-              patterns:
-                - "nginx"
-                - "redis"
-                - "postgres"
-              update-types:
-                - "patch"
-                - "minor"
+  - package-ecosystem: "docker"
+    directory: "/"
+    multi-ecosystem-group: "infrastructure"
+    groups:
+      docker:
+        patterns:
+          - "nginx"
+          - "redis"
+          - "postgres"
 
   - package-ecosystem: "helm"
     directory: "/"
@@ -74,18 +71,5 @@ updates:
       - "*"
     groups:
       helm-charts:
-        patterns:
-          - "*"
-        update-types:
-          - "patch"
-          - "minor"
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
-    multi-ecosystem-group: "infrastructure"
-    patterns:
-      - "*"
-    groups:
-      actions:
         patterns:
           - "*"

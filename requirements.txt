@@ -7,5 +7,5 @@ pandas==1.1.5
 django==3.1.7
 sqlalchemy==1.3.23
 boto3==1.17.0
-celery==4.4.7
+celery==5.6.2
 pillow==8.1.0
